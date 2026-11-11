@@ -29,4 +29,35 @@ body { margin: 0; background: #080808; color: #f4f1e9; font-family: Arial, sans-
 .eyebrow { display: flex; align-items: center; gap: .65rem; color: #f4d20b; font-size: .7rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
 .section-title { margin-top: 1rem; font-family: Impact, 'Arial Narrow', sans-serif; font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 900; line-height: .95; letter-spacing: -.05em; text-transform: uppercase; }
 .section-title span { color: #f4d20b; }
+/* ---------- Animações de entrada ---------- */
+[data-reveal] { opacity: 0; }
+[data-reveal].is-visible {
+  opacity: 1;
+  animation: reveal-up .9s cubic-bezier(.22, 1, .36, 1) backwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal="down"].is-visible { animation-name: reveal-down; }
+[data-reveal="left"].is-visible { animation-name: reveal-left; }
+[data-reveal="scale"].is-visible { animation-name: reveal-scale; }
+[data-reveal="fade"].is-visible { animation-name: reveal-fade; }
+
+@keyframes reveal-up { from { opacity: 0; transform: translate3d(0, 40px, 0); } to { opacity: 1; transform: none; } }
+@keyframes reveal-down { from { opacity: 0; transform: translate3d(0, -24px, 0); } to { opacity: 1; transform: none; } }
+@keyframes reveal-left { from { opacity: 0; transform: translate3d(-56px, 0, 0); } to { opacity: 1; transform: none; } }
+@keyframes reveal-scale { from { opacity: 0; transform: scale(.94) translate3d(0, 24px, 0); } to { opacity: 1; transform: none; } }
+@keyframes reveal-fade { from { opacity: 0; } to { opacity: 1; } }
+
+@keyframes hero-zoom { from { transform: scale(1.12); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.hero-bg { animation: hero-zoom 2s cubic-bezier(.22, 1, .36, 1) both; }
+
+/* Título do hero: palavra por palavra */
+.hero-word { display: inline-block; animation: word-in .9s cubic-bezier(.22, 1, .36, 1) backwards; animation-delay: var(--d, 0ms); }
+@keyframes word-in { from { opacity: 0; transform: translate3d(0, 55%, 0) rotate(3deg); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; }
+  [data-reveal].is-visible, .hero-bg, .hero-word { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
 @media (prefers-reduced-motion: no-preference) { a { transition: color .2s ease, background-color .2s ease, border-color .2s ease; } }

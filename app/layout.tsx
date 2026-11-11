@@ -18,6 +18,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="pt-BR">
       <body className="antialiased">
+        <noscript>
+          <style>{'[data-reveal]{opacity:1!important}'}</style>
+        </noscript>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
