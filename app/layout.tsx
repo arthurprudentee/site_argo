@@ -22,7 +22,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <style>{'[data-reveal]{opacity:1!important}'}</style>
         </noscript>
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {/* Analytics só funciona na Vercel; no GitHub Pages geraria erro 404 */}
+        {process.env.VERCEL && <Analytics />}
       </body>
     </html>
   )

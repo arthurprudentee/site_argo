@@ -12,12 +12,13 @@ import {
   Zap,
 } from 'lucide-react'
 
+import { asset } from '../lib/asset'
 import { CountUp } from '../components/count-up'
 import { ScrollReveal } from '../components/scroll-reveal'
 import { SiteChrome } from '../components/site-chrome'
 
 const whatsappUrl = 'https://wa.me/5511999999999?text=Olá!%20Quero%20conhecer%20a%20ARGO%20Personal%20Gym.'
-const logoUrl = '/images/logo-argo.png'
+const logoUrl = asset('/images/logo-argo.png')
 
 const benefits = [
   { icon: Dumbbell, title: 'Estrutura que impõe respeito', text: 'Equipamentos premium, área de força completa e tudo o que você precisa para evoluir de verdade.' },
@@ -36,7 +37,10 @@ export default function Page() {
       <ScrollReveal />
       <SiteChrome whatsappUrl={whatsappUrl} logoUrl={logoUrl} />
       <section className="relative isolate overflow-hidden min-h-[720px] border-b border-white/10 bg-[#10110f]">
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(16,17,15,.96)_0%,rgba(16,17,15,.78)_40%,rgba(16,17,15,.05)_100%),url('/images/hero-gym.png')] bg-cover bg-[position:72%_center] lg:bg-center hero-bg" />
+        <div
+          className="absolute inset-0 -z-10 bg-cover bg-[position:72%_center] lg:bg-center hero-bg"
+          style={{ backgroundImage: `linear-gradient(90deg,rgba(16,17,15,.96) 0%,rgba(16,17,15,.78) 40%,rgba(16,17,15,.05) 100%),url(${asset('/images/hero-gym.png')})` }}
+        />
         <div className="mx-auto flex min-h-[720px] max-w-7xl flex-col px-6 py-7 lg:px-10">
           <header data-reveal="down" className="flex items-center justify-between">
             <a href="#inicio" className="flex items-center gap-3" aria-label="ARGO Personal Gym início">
