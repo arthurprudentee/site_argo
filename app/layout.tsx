@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Iron House | Treine com propósito',
+  title: 'Argo Personal Gym',
   description: 'A academia para quem leva evolução a sério. Conheça nossos planos e comece sua transformação.',
   generator: 'v0.app',
 }
