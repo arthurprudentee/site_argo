@@ -17,7 +17,7 @@ import { ScrollReveal } from '../components/scroll-reveal'
 import { SiteChrome } from '../components/site-chrome'
 
 const whatsappUrl = 'https://wa.me/5511999999999?text=Olá!%20Quero%20conhecer%20a%20ARGO%20Personal%20Gym.'
-const logoUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-11-01%20at%2011.21.26-kLQXqq7WOdNz5Ye8HV10GySdjKKt10.jpeg'
+const logoUrl = '/images/logo-argo.png'
 
 const benefits = [
   { icon: Dumbbell, title: 'Estrutura que impõe respeito', text: 'Equipamentos premium, área de força completa e tudo o que você precisa para evoluir de verdade.' },
@@ -36,11 +36,11 @@ export default function Page() {
       <ScrollReveal />
       <SiteChrome whatsappUrl={whatsappUrl} logoUrl={logoUrl} />
       <section className="relative isolate overflow-hidden min-h-[720px] border-b border-white/10 bg-[#10110f]">
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(16,17,15,.98)_0%,rgba(16,17,15,.82)_38%,rgba(16,17,15,.1)_100%),url('/images/argo-training.png')] bg-cover bg-center hero-bg" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(16,17,15,.96)_0%,rgba(16,17,15,.78)_40%,rgba(16,17,15,.05)_100%),url('/images/hero-gym.png')] bg-cover bg-[position:72%_center] lg:bg-center hero-bg" />
         <div className="mx-auto flex min-h-[720px] max-w-7xl flex-col px-6 py-7 lg:px-10">
           <header data-reveal="down" className="flex items-center justify-between">
             <a href="#inicio" className="flex items-center gap-3" aria-label="ARGO Personal Gym início">
-              <img src={logoUrl} alt="ARGO Personal Gym" className="size-12 rounded-full object-cover" />
+              <img src={logoUrl} alt="ARGO Personal Gym" className="size-14 object-contain" />
               <span className="font-display text-xl font-black uppercase tracking-[-.04em]">ARGO <span className="text-[#f4d20b]">PERSONAL GYM</span></span>
             </a>
             <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
@@ -86,7 +86,7 @@ export default function Page() {
 
       <section className="relative overflow-hidden px-6 py-24 lg:px-10 lg:py-36"><div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_75%_50%,rgba(244,210,11,.16),transparent_30%)]" /><div data-reveal="scale" className="mx-auto max-w-4xl text-center"><p className="eyebrow justify-center">A sua vez</p><h2 className="font-display text-5xl font-black uppercase leading-[.95] tracking-[-.06em] sm:text-7xl">Pare de adiar a versão que você quer <span className="text-[#f4d20b]">ser.</span></h2><p className="mx-auto mt-7 max-w-xl text-lg text-white/55">Fale com nossa equipe no WhatsApp e descubra qual plano faz sentido para o seu objetivo.</p><a href={whatsappUrl} className="mt-10 inline-flex items-center gap-3 rounded-full bg-[#f4d20b] px-8 py-5 text-lg font-bold text-[#080808] transition hover:bg-[#ffe45c]"><MessageCircle /> Quero começar agora</a><p className="mt-5 text-xs text-white/35">Sem compromisso. Resposta rápida da nossa equipe.</p></div></section>
 
-      <footer data-reveal="fade" className="border-t border-white/10 px-6 py-8 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-sm text-white/40 sm:flex-row"><a href="#inicio" className="flex items-center gap-2 font-display text-lg font-black uppercase text-white"><img src={logoUrl} alt="ARGO Personal Gym" className="size-8 rounded-full object-cover" /> ARGO Personal Gym</a><p>© 2026 ARGO Personal Gym. Treine com propósito.</p><a href="#inicio" className="flex items-center gap-2 hover:text-white">@ironhousegym</a></div></footer>
+      <footer data-reveal="fade" className="border-t border-white/10 px-6 py-8 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-sm text-white/40 sm:flex-row"><a href="#inicio" className="flex items-center gap-2 font-display text-lg font-black uppercase text-white"><img src={logoUrl} alt="ARGO Personal Gym" className="size-9 object-contain" /> ARGO Personal Gym</a><p>© 2026 ARGO Personal Gym. Treine com propósito.</p><a href="#inicio" className="flex items-center gap-2 hover:text-white">@ironhousegym</a></div></footer>
     </main>
   )
 }

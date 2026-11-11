@@ -23,7 +23,7 @@ export function SiteChrome({ whatsappUrl, logoUrl }: { whatsappUrl: string; logo
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-10">
           <a href="#inicio" className="flex items-center gap-3" aria-label="ARGO Personal Gym início">
-            <img src={logoUrl} alt="" className="size-9 rounded-full object-cover" />
+            <img src={logoUrl} alt="" className="size-10 object-contain" />
             <span className="font-display text-lg font-black uppercase tracking-[-.04em]">
               ARGO <span className="text-[#f4d20b]">PERSONAL GYM</span>
             </span>
