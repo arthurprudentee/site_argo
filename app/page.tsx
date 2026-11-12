@@ -21,7 +21,7 @@ import { SiteChrome } from '../components/site-chrome'
 import { SocialLinks } from '../components/social-links'
 
 const whatsappUrl = 'https://wa.me/5511999999999?text=Olá!%20Quero%20conhecer%20a%20ARGO%20Personal%20Gym.'
-const logoUrl = asset('/images/logo-argo.png')
+const logoUrl = asset('/favicon-argo.png')
 
 const benefits = [
   { icon: Dumbbell, title: 'Estrutura que impõe respeito', text: 'Equipamentos premium, área de força completa e tudo o que você precisa para evoluir de verdade.' },
