@@ -83,3 +83,31 @@ body { margin: 0; background: #080808; color: #f4f1e9; font-family: Arial, sans-
 }
 
 @media (prefers-reduced-motion: no-preference) { a { transition: color .2s ease, background-color .2s ease, border-color .2s ease; } }
+
+/* Carrossel automático de fotos (PhotoCarousel) */
+.photo-marquee {
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.photo-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  padding-right: 1rem; /* = gap, para o loop fechar sem pulo */
+  animation: photo-scroll var(--dur, 40s) linear infinite;
+}
+.photo-marquee:hover .photo-track {
+  animation-play-state: paused;
+}
+@keyframes photo-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-track {
+    animation: none;
+  }
+  .photo-marquee {
+    overflow-x: auto;
+  }
+}

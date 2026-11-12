@@ -14,9 +14,11 @@ import {
 
 import { asset } from '../lib/asset'
 import { CountUp } from '../components/count-up'
+import { PhotoCarousel } from '../components/photo-carousel'
 import { RunnerCarousel } from '../components/runner-carousel'
 import { ScrollReveal } from '../components/scroll-reveal'
 import { SiteChrome } from '../components/site-chrome'
+import { SocialLinks } from '../components/social-links'
 
 const whatsappUrl = 'https://wa.me/5511999999999?text=Olá!%20Quero%20conhecer%20a%20ARGO%20Personal%20Gym.'
 const logoUrl = asset('/images/logo-argo.png')
@@ -91,7 +93,19 @@ export default function Page() {
 
       <section className="relative isolate overflow-hidden px-6 py-24 lg:px-10 lg:py-36"><RunnerCarousel src={asset('/images/runner-tile.webp')} /><div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_75%_50%,rgba(244,210,11,.16),transparent_30%)]" /><div data-reveal="scale" className="mx-auto max-w-4xl text-center"><p className="eyebrow justify-center">A sua vez</p><h2 className="font-display text-5xl font-black uppercase leading-[.95] tracking-[-.06em] sm:text-7xl">Pare de adiar a versão que você quer <span className="text-[#f4d20b]">ser.</span></h2><p className="mx-auto mt-7 max-w-xl text-lg text-white/55">Fale com nossa equipe no WhatsApp e descubra qual plano faz sentido para o seu objetivo.</p><a href={whatsappUrl} className="mt-10 inline-flex items-center gap-3 rounded-full bg-[#f4d20b] px-8 py-5 text-lg font-bold text-[#080808] transition hover:bg-[#ffe45c]"><MessageCircle /> Quero começar agora</a><p className="mt-5 text-xs text-white/35">Sem compromisso. Resposta rápida da nossa equipe.</p></div></section>
 
-      <footer data-reveal="fade" className="border-t border-white/10 px-6 py-8 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-sm text-white/40 sm:flex-row"><a href="#inicio" className="flex items-center gap-2 font-display text-lg font-black uppercase text-white"><img src={logoUrl} alt="ARGO Personal Gym" className="size-9 object-contain" /> ARGO Personal Gym</a><p>© 2026 ARGO Personal Gym. Treine com propósito.</p><a href="#inicio" className="flex items-center gap-2 hover:text-white">@ironhousegym</a></div></footer>
+      <PhotoCarousel
+        photos={[
+          { src: asset('/images/imagens_carrossel/0I8A5225.jpg'), alt: 'Aluna agachando no smith com acompanhamento do personal' },
+          { src: asset('/images/imagens_carrossel/0I8A5685.jpg'), alt: 'Personal orientando aluna em avanço com halteres' },
+          { src: asset('/images/imagens_carrossel/0I8A5954.jpg'), alt: 'Personal auxiliando aluno no supino' },
+          { src: asset('/images/imagens_carrossel/0I8A6461.jpg'), alt: 'Aluno sorrindo na esteira ao lado do personal' },
+          { src: asset('/images/imagens_carrossel/0I8A6781.jpg'), alt: 'Personal corrigindo a postura de aluno na rosca' },
+        ]}
+      />
+
+      <SocialLinks whatsappUrl={whatsappUrl} />
+
+      <footer data-reveal="fade" className="border-t border-white/10 px-6 py-8 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-sm text-white/40 sm:flex-row"><a href="#inicio" className="flex items-center gap-2 font-display text-lg font-black uppercase text-white"><img src={logoUrl} alt="ARGO Personal Gym" className="size-9 object-contain" /> ARGO Personal Gym</a><p>© 2026 ARGO Personal Gym. Treine com propósito.</p><a href="https://instagram.com/argo.gym" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white">@argo.gym</a></div></footer>
     </main>
   )
 }
