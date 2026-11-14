@@ -21,7 +21,7 @@ import { ScrollReveal } from '../components/scroll-reveal'
 import { SiteChrome } from '../components/site-chrome'
 import { SocialLinks } from '../components/social-links'
 
-const whatsappUrl = 'https://wa.me/5511999999999?text=Olá!%20Quero%20conhecer%20a%20ARGO%20Personal%20Gym.'
+const whatsappUrl = 'https://wa.me/554930110482?text=Olá!%20Quero%20conhecer%20a%20ARGO%20Personal%20Gym.'
 const logoUrl = asset('/favicon-argo.png')
 
 const benefits = [
