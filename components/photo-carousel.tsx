@@ -19,7 +19,7 @@ export function PhotoCarousel({ photos }: { photos: Photo[] }) {
 
       <div className="photo-marquee mt-12">
         <div className="photo-track" style={{ ['--dur' as string]: `${photos.length * 22}s` }}>
-          {loop.map((p, i) => (
+          {loop.map((p, i) => ( 
             <figure
               key={i}
               aria-hidden={i >= photos.length}
