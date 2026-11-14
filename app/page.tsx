@@ -14,6 +14,7 @@ import {
 
 import { asset } from '../lib/asset'
 import { CountUp } from '../components/count-up'
+import { LocationSection } from '../components/location-section'
 import { PhotoCarousel } from '../components/photo-carousel'
 import { RunnerCarousel } from '../components/runner-carousel'
 import { ScrollReveal } from '../components/scroll-reveal'
@@ -102,6 +103,8 @@ export default function Page() {
           { src: asset('/images/imagens_carrossel/0I8A6781.jpg'), alt: 'Personal corrigindo a postura de aluno na rosca' },
         ]}
       />
+
+      <LocationSection />
 
       <SocialLinks whatsappUrl={whatsappUrl} />
 
