@@ -124,3 +124,14 @@ body { margin: 0; background: #080808; color: #f4f1e9; font-family: Arial, sans-
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
 }
+
+/* Fundo da seção final: esmaece em todas as bordas (cima, baixo e laterais),
+   assim o brilho e as silhuetas se fundem ao fundo da página sem corte seco. */
+.cta-bg {
+  --edge: linear-gradient(180deg, transparent 0%, #000 38%, #000 62%, transparent 100%);
+  --side: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  -webkit-mask-image: var(--edge), var(--side);
+  mask-image: var(--edge), var(--side);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
