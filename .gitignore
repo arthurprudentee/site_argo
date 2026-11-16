@@ -16,3 +16,7 @@ node_modules
 .DS_Store
 # Export estático
 out/
+
+# Gerados pelo TypeScript/Next (causavam conflito em PRs)
+tsconfig.tsbuildinfo
+next-env.d.ts
