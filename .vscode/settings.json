@@ -1,0 +1,4 @@
+{
+  // Tailwind 4 usa @theme, @custom-variant etc., que o validador de CSS não conhece
+  "css.lint.unknownAtRules": "ignore"
+}
