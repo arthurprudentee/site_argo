@@ -111,3 +111,16 @@ body { margin: 0; background: #080808; color: #f4f1e9; font-family: Arial, sans-
     overflow-x: auto;
   }
 }
+
+/* Faixa amarela em movimento (ticker) */
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 180s linear infinite;
+}
+@keyframes ticker-scroll {
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}

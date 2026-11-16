@@ -7,7 +7,6 @@ import {
   Play,
   Quote,
   Star,
-  Timer,
   Users,
   Zap,
 } from 'lucide-react'
@@ -87,7 +86,22 @@ export default function Page() {
         <div className="mt-16 grid gap-4 md:grid-cols-3">{benefits.map(({ icon: Icon, title, text }, index) => <article key={title} data-reveal data-delay={index * 150} className="group border-t border-white/15 pt-6 transition duration-300 hover:-translate-y-1.5 hover:border-[#f4d20b]"><span className="mb-12 flex size-12 items-center justify-center rounded-full border border-white/15 text-[#f4d20b]"><Icon /></span><p className="mb-3 text-sm text-[#f4d20b]">0{index + 1}</p><h3 className="font-display text-2xl font-bold uppercase tracking-tight">{title}</h3><p className="mt-4 text-base leading-relaxed text-white/50">{text}</p></article>)}</div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#f4d20b] px-6 py-10 text-[#080808]"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-5 md:flex-row md:items-center"><p data-reveal="left" className="font-display text-3xl font-black uppercase tracking-tight md:text-5xl">Disciplina muda tudo.</p><div data-reveal data-delay="250" className="flex items-center gap-3 text-sm font-bold"><Timer /> Seu resultado começa no próximo treino.</div></div></section>
+      <section aria-label="Disciplina muda tudo. Seu resultado começa no próximo treino." className="overflow-hidden border-y border-white/10 bg-[#f4d20b] py-6 text-[#080808]">
+        <div aria-hidden className="ticker-track">
+          {Array.from({ length: 2 }).map((_, group) => (
+            <div key={group} className="flex shrink-0 items-center">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <div key={i} className="flex shrink-0 items-center">
+                  <span className="font-display text-3xl font-black uppercase tracking-tight md:text-5xl">Disciplina muda tudo.</span>
+                  <Zap className="mx-8 size-7 fill-current md:size-9" />
+                  <span className="font-display text-3xl font-black uppercase tracking-tight md:text-5xl">Seu resultado começa no próximo treino.</span>
+                  <Zap className="mx-8 size-7 fill-current md:size-9" />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section id="planos" className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32"><div data-reveal className="max-w-2xl"><p className="eyebrow">Escolha seu ritmo</p><h2 className="section-title">Um plano para cada <span>ambição.</span></h2><p className="mt-6 text-lg text-white/55">Comece do seu jeito. Evolua no seu tempo. Quando estiver pronto para acelerar, a gente acelera junto.</p></div><div className="mt-14 grid gap-5 lg:grid-cols-2">{plans.map((plan) => <article key={plan.name} data-reveal="scale" data-delay={plan.featured ? 200 : 0} className={`relative flex flex-col rounded-2xl border p-8 transition duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_-24px_rgba(244,210,11,.3)] lg:p-10 ${plan.featured ? 'border-[#f4d20b] bg-[#17140a]' : 'border-white/15 bg-white/[.03]'}`}>{plan.featured && <span className="absolute right-6 top-6 rounded-full bg-[#f4d20b] px-3 py-1 text-[10px] font-black uppercase tracking-widest text-[#080808]">Mais escolhido</span>}<p className="eyebrow">{plan.eyebrow}</p><h3 className="mt-4 font-display text-4xl font-black uppercase">{plan.name}</h3><p className="mt-4 max-w-sm text-white/55">{plan.description}</p><div className="my-8 flex items-end gap-1 border-b border-white/10 pb-8"><span className="text-sm text-white/45">R$</span><strong className="font-display text-6xl font-black tracking-tight">{plan.price}</strong><span className="mb-2 text-white/45">{plan.period}</span></div><ul className="flex flex-col gap-4 text-sm text-white/75">{plan.features.map((feature) => <li key={feature} className="flex items-center gap-3"><Check className="text-[#f4d20b]" />{feature}</li>)}</ul><a href={whatsappUrl} className={`mt-10 inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 font-bold ${plan.featured ? 'bg-[#f4d20b] text-[#080808] hover:bg-[#ffe45c]' : 'border border-white/20 text-white hover:border-[#f4d20b] hover:text-[#f4d20b]'}`}>Quero esse plano <ArrowRight /></a></article>)}</div></section>
 
