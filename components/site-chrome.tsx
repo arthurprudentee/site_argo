@@ -24,14 +24,14 @@ export function SiteChrome({ whatsappUrl, logoUrl }: { whatsappUrl: string; logo
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-10">
           <a href="#inicio" className="flex items-center gap-3" aria-label="ARGO Personal Gym início">
             <img src={logoUrl} alt="" className="size-10 object-contain" />
-            <span className="font-display text-lg font-black uppercase tracking-[-.04em]">
+            <span className="font-display -skew-x-6 text-lg font-black uppercase tracking-[-.04em]">
               ARGO <span className="text-[#f4d20b]">PERSONAL GYM</span>
             </span>
           </a>
-          <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-            <a href="#metodo" className="transition hover:text-white">O método</a>
-            <a href="#planos" className="transition hover:text-white">Planos</a>
-            <a href="#depoimentos" className="transition hover:text-white">Resultados</a>
+          <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-wider text-white/70 md:flex">
+            <a href="#metodo" className="inline-block -skew-x-6 transition hover:text-white">O método</a>
+            <a href="#planos" className="inline-block -skew-x-6 transition hover:text-white">Planos</a>
+            <a href="#depoimentos" className="inline-block -skew-x-6 transition hover:text-white">Resultados</a>
           </nav>
           <a
             href={whatsappUrl}
