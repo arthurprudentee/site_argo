@@ -1,6 +1,7 @@
 import { MapPin, Navigation, Phone } from 'lucide-react'
 
-const address = 'R. do Comércio, 328 - Centro, Concórdia - SC, 89700-000'
+const addressLines = ['Rua do Comércio, 328', 'Centro', 'Concórdia - SC', 'CEP 89700-000']
+const address = addressLines.join(', ') // usado no mapa e nos links de rota
 const phone = '(49) 3011-0482'
 const phoneHref = 'tel:+554930110482'
 
@@ -18,12 +19,16 @@ export function LocationSection() {
       </div>
 
       <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_1.4fr]">
-        <div data-reveal className="flex flex-col gap-6 rounded-2xl border border-white/15 bg-white/[.03] p-8">
+        <div data-reveal className="flex flex-col justify-center gap-6 rounded-2xl border border-white/15 bg-white/[.03] p-8">
           <div className="flex gap-4">
             <MapPin className="mt-1 size-5 shrink-0 text-[#f4d20b]" />
             <div>
               <strong className="font-display text-lg font-black uppercase">Endereço</strong>
-              <p className="mt-1 text-white/60">{address}</p>
+              <p className="mt-1 flex flex-col text-white/60">
+                {addressLines.map((line) => (
+                  <span key={line}>{line}</span>
+                ))}
+              </p>
             </div>
           </div>
 
