@@ -12,7 +12,6 @@ import {
 } from 'lucide-react'
 
 import { asset } from '../lib/asset'
-import { CountUp } from '../components/count-up'
 import { LocationSection } from '../components/location-section'
 import { PhotoCarousel } from '../components/photo-carousel'
 import { RunnerCarousel } from '../components/runner-carousel'
@@ -74,7 +73,6 @@ export default function Page() {
                 <a href={whatsappUrl} className="inline-flex items-center justify-center gap-3 rounded-full bg-[#f4d20b] px-7 py-4 font-bold text-[#080808] transition hover:bg-[#ffe45c]">Quero conhecer a ARGO <ArrowRight /></a>
                 <a href="#metodo" className="inline-flex items-center justify-center gap-3 rounded-full border border-white/20 px-7 py-4 font-bold text-white transition hover:border-white/50"><Play className="fill-current" /> Como funciona</a>
               </div>
-              <div data-reveal="fade" data-delay="750" className="mt-12 flex items-center gap-5 text-sm text-white/55"><div className="flex -space-x-2"><span className="size-9 rounded-full border-2 border-[#080808] bg-[#bd9b78]" /><span className="size-9 rounded-full border-2 border-[#080808] bg-[#686d53]" /><span className="size-9 rounded-full border-2 border-[#080808] bg-[#c7b29b]" /></div><span><strong className="text-white">+<CountUp to={2000} /> pessoas</strong> já treinam com propósito</span></div>
             </div>
           </div>
           <div data-reveal="fade" data-delay="1000" className="flex items-center gap-3 text-xs font-bold uppercase tracking-[.22em] text-white/40"><ChevronDown className="animate-bounce" /> Role para descobrir</div>
@@ -83,7 +81,7 @@ export default function Page() {
 
       <section id="metodo" className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
         <div className="grid gap-14 lg:grid-cols-[.8fr_1.2fr] lg:items-end"><div data-reveal><p className="eyebrow">Por que a ARGO</p><h2 className="section-title">Mais do que <span>treinar.</span><br />É se transformar.</h2></div><p data-reveal data-delay="200" className="max-w-md text-lg leading-relaxed text-white/55">Você não precisa de mais uma academia. Precisa de um lugar que respeite seu objetivo e te dê as ferramentas certas para chegar lá.</p></div>
-        <div className="mt-16 grid gap-4 md:grid-cols-3">{benefits.map(({ icon: Icon, title, text }, index) => <article key={title} data-reveal data-delay={index * 150} className="group border-t border-white/15 pt-6 transition duration-300 hover:-translate-y-1.5 hover:border-[#f4d20b]"><span className="mb-12 flex size-12 items-center justify-center rounded-full border border-white/15 text-[#f4d20b]"><Icon /></span><p className="mb-3 text-sm text-[#f4d20b]">0{index + 1}</p><h3 className="font-display text-2xl font-bold uppercase tracking-[.01em]">{title}</h3><p className="mt-4 text-base leading-relaxed text-white/50">{text}</p></article>)}</div>
+        <div className="mt-16 grid gap-4 md:grid-cols-3 md:gap-y-0">{benefits.map(({ icon: Icon, title, text }, index) => <article key={title} data-reveal data-delay={index * 150} className="group border-t border-white/15 pt-6 transition duration-300 md:row-span-4 md:grid md:grid-rows-subgrid hover:-translate-y-1.5 hover:border-[#f4d20b]"><span className="mb-12 flex size-12 items-center justify-center rounded-full border border-white/15 text-[#f4d20b]"><Icon /></span><p className="mb-3 text-sm text-[#f4d20b]">0{index + 1}</p><h3 className="font-display text-2xl font-bold uppercase tracking-[.01em]">{title}</h3><p className="mt-4 text-base leading-relaxed text-white/50">{text}</p></article>)}</div>
       </section>
 
       <section aria-label="Disciplina muda tudo. Seu resultado começa no próximo treino." className="overflow-hidden border-y border-white/10 bg-[#f4d20b] py-6 text-[#080808]">
