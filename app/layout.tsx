@@ -1,6 +1,13 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Arimo, Barlow_Condensed } from 'next/font/google'
 import './globals.css'
+
+// Fontes servidas pelo próprio site (baixadas no build), para o visual ser
+// idêntico em Windows, Linux, Mac e celular, sem depender das fontes do sistema.
+// Barlow Condensed (títulos, com pesos 700–900 reais) | Arimo = métricas da Arial (texto)
+const fontDisplay = Barlow_Condensed({ weight: ['700', '800', '900'], subsets: ['latin'], display: 'swap', variable: '--font-display-face' })
+const fontSans = Arimo({ subsets: ['latin'], display: 'swap', variable: '--font-arimo' })
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL // ex.: https://argogym.com.br (sem barra no final)
@@ -47,7 +54,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${fontDisplay.variable} ${fontSans.variable}`}>
       <body className="antialiased">
         <noscript>
           <style>{'[data-reveal]{opacity:1!important}'}</style>
