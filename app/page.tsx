@@ -41,7 +41,7 @@ export default function Page() {
       <section className="relative isolate overflow-hidden min-h-[720px] bg-[#10110f]">
         <div
           className="absolute inset-0 -z-10 bg-cover bg-[position:72%_center] lg:bg-center hero-bg"
-          style={{ backgroundImage: `linear-gradient(90deg,rgba(16,17,15,.96) 0%,rgba(16,17,15,.78) 40%,rgba(16,17,15,.05) 100%),url(${asset('/images/hero-gym.png')})` }}
+          style={{ backgroundImage: `linear-gradient(90deg,rgba(16,17,15,.96) 0%,rgba(16,17,15,.78) 40%,rgba(16,17,15,.05) 100%),url(${asset('/images/hero-gym.webp')})` }}
         />
         <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-b from-transparent to-[#10110f]" />
         <div className="mx-auto flex min-h-[720px] max-w-7xl flex-col px-6 py-7 lg:px-10">
