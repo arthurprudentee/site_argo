@@ -45,17 +45,17 @@ export default function Page() {
         />
         <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-b from-transparent to-[#10110f]" />
         <div className="mx-auto flex min-h-[720px] max-w-7xl flex-col px-6 py-7 lg:px-10">
-          <header data-reveal="down" className="flex items-center justify-between">
-            <a href="#inicio" className="flex items-center gap-3" aria-label="ARGO Personal Gym início">
-              <img src={logoUrl} alt="ARGO Personal Gym" className="size-14 object-contain" />
-              <span className="font-display -skew-x-6 text-xl font-black uppercase tracking-[.01em]">ARGO <span className="text-[#f4d20b]">PERSONAL GYM</span></span>
+          <header data-reveal="down" className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#10110f]/55 px-5 py-3 shadow-lg shadow-black/30 backdrop-blur-md">
+            <a href="#inicio" className="group flex items-center gap-3" aria-label="ARGO Personal Gym início">
+              <img src={logoUrl} alt="ARGO Personal Gym" className="size-16 object-contain transition duration-300 ease-out group-hover:drop-shadow-[0_0_12px_rgba(244,210,11,.55)] motion-safe:group-hover:-rotate-6 motion-safe:group-hover:scale-110" />
+              <span className="font-display -skew-x-6 text-2xl font-black uppercase tracking-[.01em]">ARGO <span className="text-[#f4d20b]">PERSONAL GYM</span></span>
             </a>
             <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-wider text-white/70 md:flex">
               <a href="#metodo" className="inline-block -skew-x-6 transition hover:text-white">O método</a>
               <a href="#planos" className="inline-block -skew-x-6 transition hover:text-white">Planos</a>
               <a href="#depoimentos" className="inline-block -skew-x-6 transition hover:text-white">Resultados</a>
             </nav>
-            <a href={whatsappUrl} className="hidden items-center gap-2 rounded-full border border-white/25 px-5 py-2.5 text-sm font-bold transition hover:border-[#f4d20b] hover:text-[#f4d20b] sm:flex">Fale com a equipe <ArrowRight /></a>
+            <a href={whatsappUrl} className="hidden items-center gap-2 rounded-full bg-[#f4d20b] px-5 py-2.5 text-sm font-bold text-[#080808] transition hover:bg-[#ffe45c] sm:flex">Fale com a equipe <ArrowRight /></a>
           </header>
 
           <div id="inicio" className="flex flex-1 items-center py-20">
